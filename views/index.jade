@@ -1,42 +1,73 @@
 doctype html
 html(lang='en')
 	head
-		meta(http-equiv='Content-Type',content='text/html; charset=utf-8')
-		meta(name='viewport',content='width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui')
-		meta(name='apple-mobile-web-app-status-bar-style',content='black')
-		title 微信SDK demo
-		link(rel='stylesheet',type="text/css",href='/index.css')
+	meta(http-equiv='Content-Type',content='text/html; charset=utf-8')
+	meta(name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no")
+	meta(name="keywords" content="")
+	meta(name="description" content="")
+	title Welcome to Our wedding
+	link(rel="shortcut icon" type="image/png" href="images/favicon.png")
+	link(rel="stylesheet" href="stylesheets/bundle.css")
+	link(rel="stylesheet" href="src/css/index.css")
 	body
-		h3 微信SDK demo
-		div.panel
-			h5 1.判断是否支持特定JS-API
-			button#checkJsApi checkJsApi
-			br
-			br
-			h5 2.分享接口
-			button#onMenuShareAppMessage 发送给朋友
-			br
-			br
-			h5 3.图像接口
-			button#chooseImage 选择图片
-			br
-			button#previewImage 预览图片
-			br
-			br
-			h5 4.位置接口
-			button#getLocation 获取位置
-			br
-			br
-			h5 5.微信扫一扫
-			br
-			button#scanQRCode0 扫一扫
-			br
-			button#refresh 刷新当前页面
-		script(src='http://res.wx.qq.com/open/js/jweixin-1.0.0.js')
-		script(type='text/javascript').
-			var signature = '#{signature}';
-			var nonceStr = '#{noncestr}';
-			var timestamp = '#{timestamp}';
-			var appId = '#{appId}';
-			var jsapi_ticket = '#{jsapi_ticket}';
-		script(src='/index.js')
+	div.loading-overlay
+		img(src="images/loading.svg")
+		audio(src="http://o7q84v6xt.bkt.clouddn.com/beautiful_tmp.mp3" type="audio/mpeg" loop autoplay)
+	div(class='swiper-container')
+		div(class='swiper-wrapper')
+			div(class='swiper-slide slide-1')
+				div(class="item-image animated" data-ani-name="bounceIn" data-ani-duration="5s" data-ani-delay="0s")
+				p(class="item-text animated" data-ani-name="rollIn" data-ani-duration="1s" data-ani-delay="0.2s") We Are 范雄 & 何谐
+				p(class="item-text1 animated" data-ani-name="rollIn" data-ani-duration="1s" data-ani-delay="1.2s") Going to Marry
+				p(class="item-text2 animated" data-ani-name="rollIn" data-ani-duration="1s" data-ani-delay="2.2s") In 绵阳 on 2016.6.25
+				p(class="item-text3 animated" data-ani-name="shake" data-ani-duration="6s" data-ani-delay="3.2s") Welcome to Our's Wedding!
+			div(class='swiper-slide slide-2')
+				div(class="item-image animated" data-ani-name="slideInLeft" data-ani-duration="1s" data-ani-delay="0s")
+				p(class="item-text2 animated" data-ani-name="rollIn" data-ani-duration="1s" data-ani-delay="0.2s") Our Story can be traced back
+				p(class="item-text1 animated" data-ani-name="rollIn" data-ani-duration="1s" data-ani-delay="1.2s") to 14 years when we first knew each other
+			div(class='swiper-slide slide-5')
+				div(class="item-image animated" data-ani-name="slideInLeft" data-ani-duration="1s" data-ani-delay="0s")
+				p(class="item-text animated" data-ani-name="rollIn" data-ani-duration="1s" data-ani-delay="0.2s") Another 10 years after graduation,We met again
+				//p(class="item-text1 animated" data-ani-name="rollIn" data-ani-duration="1s" data-ani-delay="1.2s") We go dating seeing movie,eating and watching shows.
+			div(class='swiper-slide slide-6')
+				div(class="item-image animated" data-ani-name="slideInLeft" data-ani-duration="1s" data-ani-delay="0s") 
+				p(class="item-text animated" data-ani-name="rollIn" data-ani-duration="1s" data-ani-delay="0.2s") We are both loving delicious food,plesant trip and old classic moives.
+			div(class='swiper-slide slide-7')
+				div(class="item-image animated" data-ani-name="slideInLeft" data-ani-duration="1s" data-ani-delay="0s")
+				p(class="item-text2 animated" data-ani-name="rollIn" data-ani-duration="1s" data-ani-delay="0.2s") The encounter of Fireworks Festival
+				p(class="item-text3 animated" data-ani-name="rollIn" data-ani-duration="1s" data-ani-delay="1.2s") We make our wishes with fireworks blooming in the sky
+			div(class='swiper-slide slide-8')
+				div(class="item-image animated" data-ani-name="slideInLeft" data-ani-duration="1s" data-ani-delay="0s")
+				p(class="item-text animated" data-ani-name="rollIn" data-ani-duration="1s" data-ani-delay="0.2s") I proposed to her under the sea in Redang Island
+				p(class="item-text1 animated" data-ani-name="rollIn" data-ani-duration="1s" data-ani-delay="1.2s") And We decide to pursue of our happiness and dreams together in the rest of our life.
+			div(class='swiper-slide slide-9')
+				div(class="item-image animated" data-ani-name="slideInLeft" data-ani-duration="1s" data-ani-delay="0s")
+				p(class="item-text animated" data-ani-name="rollIn" data-ani-duration="1s" data-ani-delay="0.2s") Now,We are going to have our marriage ceremony be held
+				p(class="item-text1 animated" data-ani-name="rollIn" data-ani-duration="1s" data-ani-delay="1.2s") And U r all welcomed!
+			div(class='swiper-slide slide-4')
+				div(class="item-image animated" data-ani-name="slideInLeft" data-ani-duration="1s" data-ani-delay="0s")
+				div(class="item-image-loc animated" data-ani-name="slideInLeft" data-ani-duration="1s" data-ani-delay="0s")
+						p(class="location") 地址:四川绵阳绵州印象
+						input(id="getLocation" type="image" src="images/nav.svg") 
+						//button#getLocation 路线
+				p(class="item-text animated" data-ani-name="wobble" data-ani-duration="1s" data-ani-delay="0.3s") ----We Will Be Here Waiting For U----
+			div(class='swiper-slide slide-3')
+				p(class="item-text animated" data-ani-name="shake" data-ani-duration="10s" data-ani-delay="0s") Write Something for Us
+				div(id="commentWrap" class="comment-warp")
+
+	button.up-arrow
+		i.icon-angle-double-up
+	button.btn-music
+		i.icon-note
+	script(src='javascripts/bundle.js')
+	script(src='http://res.wx.qq.com/open/js/jweixin-1.0.0.js')
+	script(type='text/javascript').
+		var signature =	'#{signature}';
+		var nonceStr = '#{noncestr}';
+		var timestamp = '#{timestamp}';
+		var appId = '#{appId}';
+		var jsapi_ticket = '#{jsapi_ticket}';
+	script(src='/wx.js')
+	script(src='lib/js/react-with-addons.js')
+	script(src='src/js/component.js')
+

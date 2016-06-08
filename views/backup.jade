@@ -1,0 +1,24 @@
+doctype html
+html(lang='en')
+	head
+		meta(http-equiv='Content-Type',content='text/html; charset=utf-8')
+		meta(name='viewport',content='width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no,minimal-ui')
+		meta(name='apple-mobile-web-app-status-bar-style',content='black')
+		title welcome demo
+		link(rel='stylesheet',type="text/css",href='/index.css')
+	body
+		h3 微信SDK demo
+		div.panel
+			br
+			button#onMenuShareAppMessage 发送给朋友
+			br
+			button#getLocation 获取位置
+			br
+		script(src='http://res.wx.qq.com/open/js/jweixin-1.0.0.js')
+		script(type='text/javascript').
+			var signature = '#{signature}';
+			var nonceStr = '#{noncestr}';
+			var timestamp = '#{timestamp}';
+			var appId = '#{appId}';
+			var jsapi_ticket = '#{jsapi_ticket}';
+		script(src='/index.js')

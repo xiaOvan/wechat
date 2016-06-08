@@ -6,8 +6,8 @@
  * @desc   : 
  */
 
-var express = require('express'),
-	jade = require('jade');
+var express = require('express');
+var jade = require('jade');
 
 var app = express();
 
@@ -16,7 +16,7 @@ app.set('views', './views');  // 设置模板相对路径(相对当前目录)
 
 app.locals.basedir = './'
 
-var port = 18080 ;  //BAE 百度应用引擎默认端口号
+var port = 80 ;  //BAE 百度应用引擎默认端口号
  //中间件定义
 app.use(express.logger());
 app.use(express.compress());

@@ -1,11 +1,11 @@
-document.getElementById('refresh').onclick = function(){location.reload();}
+//document.getElementById('refresh').onclick = function(){location.reload();}
 
 /**
  *  以下内容多摘自官方demo
  *
 **/
 wx.config({
-    debug: true, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
+    debug:false, // 开启调试模式,调用的所有api的返回值会在客户端alert出来，若要查看传入的参数，可以在pc端打开，参数信息会通过log打出，仅在pc端时才会打印。
     appId: appId, // 必填，公众号的唯一标识
     timestamp: timestamp, // 必填，生成签名的时间戳
     nonceStr: nonceStr, // 必填，生成签名的随机串
@@ -48,7 +48,7 @@ wx.config({
 
 wx.ready(function(){
  // 1 判断当前版本是否支持指定 JS 接口，支持批量判断
-  document.querySelector('#checkJsApi').onclick = function () {
+/*  document.querySelector('#checkJsApi').onclick = function () {
     wx.checkJsApi({
       jsApiList: [
         'getNetworkType',
@@ -59,9 +59,35 @@ wx.ready(function(){
       }
     });
   };
-
+*/
+wx.onMenuShareTimeline({
+    title: '范雄何谐邀请您来参加我们的婚礼!', // 分享标题
+    link: 'http://gafe.chinacloundapp.cn', // 分享链接
+    imgUrl: 'http://o7q84v6xt.bkt.clouddn.com/1.jpg',
+    success: function () { 
+        // 用户确认分享后执行的回调函数
+    },
+    cancel: function () { 
+        // 用户取消分享后执行的回调函数
+    }
+});
+wx.onMenuShareAppMessage({
+    title: 'An Invitation From 范雄&何谐!', // 分享标题
+    desc: '我们的婚礼将在2016年6月25日于绵阳举行，诚邀分享喜悦!', // 分享描述
+    link: 'http://gafe.chinacloudapp.cn', // 分享链接
+    imgUrl: 'http://o7q84v6xt.bkt.clouddn.com/1.jpg', // 分享图标
+    type: '', // 分享类型,music、video或link，不填默认为link
+    dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+    success: function () { 
+        // 用户确认分享后执行的回调函数
+    },
+    cancel: function () { 
+        // 用户取消分享后执行的回调函数
+    }
+});
    // 2. 分享接口
   // 2.1 监听“分享给朋友”，按钮点击、自定义分享内容及分享结果接口
+/*
   document.querySelector('#onMenuShareAppMessage').onclick = function () {
     wx.onMenuShareAppMessage({
       title: '互联网之子',
@@ -73,20 +99,21 @@ wx.ready(function(){
         alert('用户点击发送给朋友');
       },
       success: function (res) {
-        alert('已分享');
+        //alert('已分享');
       },
       cancel: function (res) {
-        alert('已取消');
+        //alert('已取消');
       },
       fail: function (res) {
-        alert(JSON.stringify(res));
+        //alert(JSON.stringify(res));
       }
     });
-    alert('已注册获取“发送给朋友”状态事件');
+    //alert('已注册获取“发送给朋友”状态事件');
   };
-
+*/
     // 5 图片接口
   // 5.1 拍照、本地选图
+/*
   var images = {
     localId: [],
     serverId: []
@@ -110,25 +137,37 @@ wx.ready(function(){
       ]
     });
   };
-
+*/
     // 7.2 获取当前地理位置
   document.querySelector('#getLocation').onclick = function () {
     wx.getLocation({
       success: function (res) {
-        alert(JSON.stringify(res));
+        //alert(res.latitude);
+	alert('test');
+	var latitude = res.latitude;
+	var longitude = res.longitude;
+//	alert(JSON.stringify(res));
+	var url='http://mo.amap.com/?from='+latitude+','+longitude+'&to=31.467063,104.742081&type=0&opt=1&dev=1';
+	//var url='.amap.com/?from='+latitude+','+longitude+'&to=31.467063,104.742081&type=0&opt=1&dev=1';
+//	var url1='http://api.map.baidu.com/direction?origin=latlng:'+latitude+','+longitude+'&destination=latlng:31.467063,104.742081';
+//	var url2='&mode=driving&output=html&src=weddingpath';
+//	var url=url1+url2;
+	window.location=url;
+	//alert(url1);
+	//alert(url1+url2);
       },
       cancel: function (res) {
         alert('用户拒绝授权获取地理位置');
       }
     });
   };
-
+/*
     // 9 微信原生接口
   // 9.1.1 扫描二维码并返回结果
   document.querySelector('#scanQRCode0').onclick = function () {
     wx.scanQRCode();
   };
-
+*/
 });
 
 wx.error(function(res){
